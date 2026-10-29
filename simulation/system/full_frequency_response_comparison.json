@@ -1,0 +1,111 @@
+{
+  "status": "pre-measurement nominal model; not measured response",
+  "V5_1": {
+    "low_frequency": {
+      "name": "case",
+      "pr_count": 1,
+      "volume_l": 2.4,
+      "added_mass_each_g": 0.0,
+      "highpass_hz": 42.0,
+      "f3_hz": 63.00433298121178,
+      "peak_error_65_250_db": 2.1221149825931747,
+      "rms_error_65_250_db": 1.0448606679023587,
+      "tuning_hz": 66.19709366455025,
+      "safe_voltage_rms": 10.422736968206767,
+      "safe_ceiling_80_200_db": 95.42831151828605,
+      "safe_spl_60_db": 91.60501214266512,
+      "safe_spl_65_db": 94.39459511757653,
+      "limiter": "DS115-PR excursion"
+    },
+    "axial_fit": {
+      "gain_db": -9.958783693791275,
+      "shelf_gain_db": 4.178834924692948,
+      "shelf_frequency_hz": 3316.04387363428,
+      "shelf_slope": 1.4999999814515261,
+      "fitted_delay_us": -145.10660850084165,
+      "polarity": -1,
+      "rms_500_15000_db": 0.30318815994962545,
+      "p02_500_15000_db": -0.42322474480234124,
+      "p98_500_15000_db": 0.6403540207663435,
+      "minimum_500_15000_db": -0.45443472269627705,
+      "maximum_500_15000_db": 0.9618335757904788
+    },
+    "directivity": {
+      "waveguide": "V5 compact ellipse 104x64x18",
+      "mouth_width_mm": 104.0,
+      "mouth_height_mm": 64.0,
+      "depth_mm": 18.0,
+      "cassette_width_mm": 112.0,
+      "cassette_height_mm": 72.0,
+      "ctc_mm": 82.2286,
+      "crossover_hz": 2400.0,
+      "piston_match_rms_db": 0.24583429683369232,
+      "listening_window_residual_rms_db": 0.03657874459996492,
+      "pir_proxy_residual_rms_db": 0.26347225757708653,
+      "pir_proxy_peak_to_peak_db": 0.8891132860266442,
+      "di_residual_rms_db": 0.48290373097810907,
+      "vertical_10_worst_db": -0.625254829352581,
+      "vertical_20_worst_db": -2.505571107623454,
+      "vertical_null_deg_at_fc": 60.345005931148535,
+      "horizontal_60_db_at_fc": -1.7483174223348046,
+      "score": 0.25011362284490674
+    }
+  },
+  "V5_2": {
+    "low_frequency": {
+      "name": "case",
+      "pr_count": 2,
+      "volume_l": 2.6,
+      "added_mass_each_g": 7.8,
+      "highpass_hz": 40.0,
+      "f3_hz": 60.43833823237552,
+      "peak_error_65_250_db": 0.9839910678100381,
+      "rms_error_65_250_db": 0.6204982737958764,
+      "tuning_hz": 66.94014507891447,
+      "safe_voltage_rms": 11.222242317452293,
+      "safe_ceiling_80_200_db": 96.60394957843911,
+      "safe_spl_60_db": 93.87030077622043,
+      "safe_spl_65_db": 97.25203365693868,
+      "limiter": "ND91 excursion/power"
+    },
+    "axial_fit": {
+      "gain_db": -9.722752985134901,
+      "shelf_gain_db": 3.873222437829169,
+      "shelf_frequency_hz": 4156.030616831936,
+      "shelf_slope": 1.4999999989164898,
+      "fitted_delay_us": 59.0582474422762,
+      "polarity": 1,
+      "rms_500_15000_db": 0.311241473202303,
+      "p02_500_15000_db": -0.43416299780597173,
+      "p98_500_15000_db": 0.6048441832829634,
+      "minimum_500_15000_db": -0.46190111603091566,
+      "maximum_500_15000_db": 0.9228878350034648
+    },
+    "directivity": {
+      "waveguide": "V5.2 smooth close-coupled ellipse 98x50x16",
+      "mouth_width_mm": 98.0,
+      "mouth_height_mm": 50.0,
+      "depth_mm": 16.0,
+      "cassette_width_mm": 106.0,
+      "cassette_height_mm": 58.0,
+      "ctc_mm": 72.2286,
+      "crossover_hz": 2500.0,
+      "piston_match_rms_db": 0.13139770368473608,
+      "listening_window_residual_rms_db": 0.06546604286480044,
+      "pir_proxy_residual_rms_db": 0.18298512665325362,
+      "pir_proxy_peak_to_peak_db": 0.6226193621135145,
+      "di_residual_rms_db": 0.3919464840894171,
+      "vertical_10_worst_db": -0.5129087649315536,
+      "vertical_20_worst_db": -2.092660725533832,
+      "vertical_null_deg_at_fc": 71.76155848238525,
+      "horizontal_60_db_at_fc": -1.8188866190760253,
+      "score": 0.1412168785555604
+    }
+  },
+  "limitations": [
+    "No same-reference in-box complex polar or impedance measurements",
+    "Nominal small-signal T/S parameters and ideal acoustic filters",
+    "Published-driver axial proxy; finite-baffle/cavity details uncertain",
+    "No grille, compression, production variation, or nonlinear distortion model"
+  ]
+}

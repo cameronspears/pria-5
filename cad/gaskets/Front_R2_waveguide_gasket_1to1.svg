@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="148mm" height="105mm" viewBox="0 0 148 105">
+  <rect width="148" height="105" fill="white"/>
+  <g fill="#202020" font-family="Arial, sans-serif" font-size="3.1">
+    <text x="10" y="9">FRONT R2 — WAVEGUIDE GASKET — 1:1</text>
+    <text x="10" y="15">Print at 100%; disable “fit to page”. Verify the scale below.</text>
+    <text x="10" y="85">Outer 106.4 × 57.4 mm / inner 100.8 × 52.8 mm</text>
+    <text x="10" y="91">Soft closed-cell foam: 1.0 mm total, including adhesive.</text>
+    <text x="82" y="99">50 mm check</text>
+  </g>
+  <g transform="translate(74,48)" fill="none" stroke="#111" stroke-width="0.15">
+    <ellipse rx="53.2" ry="28.7"/>
+    <ellipse rx="50.4" ry="26.4"/>
+  </g>
+  <g stroke="#111" stroke-width="0.2">
+    <path d="M20 98 H70 M20 96 V100 M70 96 V100"/>
+  </g>
+</svg>
