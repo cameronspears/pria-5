@@ -1,9 +1,16 @@
 # Simulation
 
-These are the models I used to choose the V5.2 layout before anything was measured. They
-compare options against each other. None of it is measured performance, and the built
-speaker differs from the model in places (for example, the radiators ended up with 11 g of
-added mass each, where the model used 7.8 g, and the crossover settled at 3 kHz).
+Models used to make design decisions. They compare options against each other. None of it is
+measured performance.
+
+- [`crossover_study_2026-10-21/`](crossover_study_2026-10-21/): the study behind the current
+  tuning. A room-free model of the speaker (bass model, the cabinet's baffle step by BEM, and
+  the measured drivers) used to pick the crossover, the radiator mass, the bass target and the
+  speaker preset. Tuning30 was built from it and measured on 2026-10-22; its README has the
+  corrections since.
+- The files below are the earlier pre-build models used to choose the V5.2 layout. The built
+  speaker differs from them: the radiators carry 8 g each where the model used 7.8 g, and the
+  crossover is about 2.2 kHz acoustic where the model planned 2.5 kHz.
 
 | File | What it is |
 |---|---|

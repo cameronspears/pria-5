@@ -1,0 +1,13 @@
+bank,type,hz,q,gain_db,layer
+Woofer EQ,High-pass,50.0,1.0,0.0,speaker (same in every unit)
+Woofer EQ,High-pass,50.0,1.0,0.0,speaker (same in every unit)
+Woofer EQ,Peaking,64.4,1.2,4.2,speaker (same in every unit)
+Woofer EQ,Peaking,1576.8,1.83,-2.4,speaker (same in every unit)
+Tweeter EQ,Peaking,1576.8,1.83,-2.4,speaker (same in every unit)
+Woofer EQ,Peaking,3443.6,6.0,-2.7,speaker (same in every unit)
+Tweeter EQ,Peaking,3443.6,6.0,-2.7,speaker (same in every unit)
+Woofer EQ,Peaking,372.2,0.44,2.7,speaker (same in every unit)
+Tweeter EQ,Peaking,372.2,0.44,2.7,speaker (same in every unit)
+Woofer EQ,Peaking,1220.0,5.0,-4.0,speaker (same in every unit)
+Tweeter EQ,Peaking,1220.0,5.0,-4.0,speaker (same in every unit)
+Woofer EQ,Low shelf (or broad peaking),100,0.71,0 to +6,"bass tilt (placement/feel), +5 in the current room"

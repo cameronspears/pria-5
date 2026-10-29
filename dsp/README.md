@@ -1,57 +1,53 @@
 # DSP settings
 
-Pria 5 runs on a Dayton Audio KABD-250 board (ADAU1701 DSP). I programmed it in SigmaStudio 4.7
-through Dayton's KPX programmer. Bluetooth stereo is summed to mono, then split into a woofer
-branch (DAC1) and a tweeter branch (DAC0).
+Pria 5 runs on a Dayton Audio KABD-250 board (ADAU1701 DSP, 48 kHz), programmed in SigmaStudio
+4.7 through Dayton's KPX programmer. Bluetooth stereo is summed to mono, then split into a woofer
+path (DAC1) and a tweeter path (DAC0). The source is the volume control; there are no pots.
+
+The speaker runs **Tuning31**. Its EQ is modelled from the Tuning30 measurements and **hasn't
+been measured**. Tuning30 was measured on 2026-10-22. See
+[`docs/tuning-status.md`](../docs/tuning-status.md) for what was measured and what's predicted.
 
 ## Files
 
 | File | What it is |
 |---|---|
-| `Tuning22_Refine.dspproj` | The SigmaStudio project for Tuning22 (2026-10-02). This is the last project file I checked line by line against the planned values. |
-| `tuning22_eq.csv` | Every EQ row in Tuning22, both branches, sorted by frequency. |
+| `tuning31_eq.csv` | Every EQ row in Tuning31, the file in use. 14 filters, including the crossover and the tweeter inversion |
+| `tuning30_eq.csv` | Every EQ row in Tuning30, in row order, as measured on 2026-10-22. 19 filters |
+| `tuning22/` | The earlier Tuning22 SigmaStudio project and its EQ list, from the September tuning. History only |
 
-## Signal chain in Tuning22
+The Tuning30 and Tuning31 SigmaStudio projects aren't in this repository. The rows above are
+everything they change in the EQ; the signal chain is in
+[`measurements/tuning30_2026-10-22/derived/dsp_signal_chain.md`](../measurements/tuning30_2026-10-22/derived/dsp_signal_chain.md).
 
-**Woofer branch** (the EQ feeds the bass lift, which feeds the 150 Hz split)
+## Signal chain
 
-- Two 50 Hz high-pass filters in series, Q 0.71 each, to keep the woofer out of excursion it
-  can't use
-- Fifteen EQ rows: the two high-passes, a 70 Hz boost (Q 0.7, +9 dB), and twelve peaking
-  filters shared with the tweeter branch
-- Low-volume bass lift (SigmaStudio "Dynamic Enhancement": −24 dB threshold, 500 ms, +4 dB,
-  70 Hz)
-- A 150 Hz Linkwitz-Riley 24 dB/oct split with a limiter on the bass band only, then recombined
-- 3 kHz Linkwitz-Riley 24 dB/oct low-pass, branch gain −4 dB
+**Crossover.** Built from EQ rows; SigmaStudio's crossover block isn't used. The woofer gets an
+8th-order Linkwitz-Riley low-pass (four 2nd-order rows at 2500 Hz). The tweeter gets a 4th-order
+Bessel high-pass (2501 Hz Q 0.5219 and 2231 Hz Q 0.8055), is **inverted** (an IIR row with
+b0 = −1), and is delayed 3 samples (62.5 µs). The acoustic crossover lands near 2.2 kHz. With
+normal polarity the drivers cancel into a 17 dB hole at 2.3 kHz (measured).
 
-**Tweeter branch**
+**Speaker preset.** The same in every unit: two 50 Hz high-pass rows (Q 1.0) to protect the
+woofer, +4.2 dB at 64.4 Hz for the bass alignment, a baffle-step lift, and cuts for the speaker's
+own peaks. In Tuning31 those are three rows (510 Hz +3.3 dB and 1440 Hz −2.1 dB on the woofer,
+3300 Hz −2.4 dB on the tweeter) where Tuning30 had four rows in both banks.
 
-- Thirteen peaking filters: the twelve shared ones and a 3.5 kHz cut (Q 3, −2 dB)
-- A matching 150 Hz split and sum, so the two branches stay in phase
-- 3 kHz Linkwitz-Riley 24 dB/oct high-pass, branch gain −10 dB, no polarity inversion
-- 3 samples of delay (62.5 µs at 48 kHz)
+**Bass tilt.** A 100 Hz low shelf, +5 dB, set for placement and taste.
 
-A final peak limiter is driven from the woofer signal and applies to both.
+**Bass limiter.** On the band below 150 Hz only, split off and recombined with a 150 Hz
+Linkwitz-Riley pair (the tweeter path has a matching pair so both stay in phase). −12 dBFS flat,
+hold 30 ms, decay 50 dB/s, soft knee. The ceiling comes from measured 10% THD points.
 
-The twelve shared filters were fitted to a twelve-position room average, aiming at a target
-that falls 0.5 dB per octave from a 500 Hz reference.
+**Quiet-level bass lift.** +4 dB below −24 dB, at 70 Hz. It does nothing at normal levels.
 
-## What I listen with now
+**Clip guard.** Each driver on its own channel at −1 dBFS, hold 5 ms, decay 100 dB/s.
 
-After Tuning22 I changed a few levels by ear:
+**Gain.** Both mixers at −6.5 dB, so a full-scale source at 100% peaks at −1.4 to −1 dBFS, at
+the clip guard. Full source volume is the clean maximum (measured).
 
-| Control | Tuning22 file | Now |
-|---|---|---|
-| Both mixers | −12 dB | −4 dB |
-| Bass detector | −6 dB | −3 dB |
-| Single 1 (limiter detector) | −6 dB | −6 dB |
-| Woofer high-pass filters | 50 Hz | 50 Hz (I tried 80 Hz and went back) |
+## Before you load anything
 
-These later values are what I set on the board. I haven't saved and re-checked a project file
-with them, so the `.dspproj` here still has the Tuning22 values.
-
-## Before you load it
-
-The project was built for my board, power supply and drivers. Load it to RAM first, at low
-volume, and listen before writing it to EEPROM. The levels and limiters protect my drivers at
-my listening levels; they aren't a measured maximum-output limit.
+These settings were made for my board, power supply, drivers and radiator masses (8 g each).
+Load to RAM first, at low volume, and listen before writing to EEPROM. The limiter ceiling comes
+from my woofer's measured distortion; it isn't a measured maximum-output limit for the speaker.

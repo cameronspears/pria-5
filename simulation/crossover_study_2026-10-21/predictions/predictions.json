@@ -1,0 +1,119 @@
+{
+ "basis": "2026-09-29/30 measurements of the September build; model predictions, not measurements",
+ "polarity_check": {
+  "how": "today's preset, one on-axis sweep, 1 m at the woofer/tweeter midpoint, view with a ~3 ms window",
+  "same_wiring": "1.5-4 kHz within about +/-2 dB of predictions/polarity_check_today_preset.csv",
+  "reversed_tweeter": "notch about -17 dB near 2.6 kHz (about -6 dB at 3.2 kHz with a full room window)",
+  "if_reversed": "every 'invert' instruction in this study flips"
+ },
+ "pr_nearfield_8g": {
+  "measure": "mic 5 mm from one PR cone centre, 20-500 Hz, measurement project (no EQ), same as 2026-09-29",
+  "predicted": [
+   {
+    "vb_l": 2.3,
+    "fb_hz": 53.83,
+    "pr_peak_hz": 51.99,
+    "woofer_dip_hz": 54.03
+   },
+   {
+    "vb_l": 2.5,
+    "fb_hz": 53.82,
+    "pr_peak_hz": 51.99,
+    "woofer_dip_hz": 54.03
+   },
+   {
+    "vb_l": 2.7,
+    "fb_hz": 53.81,
+    "pr_peak_hz": 52.11,
+    "woofer_dip_hz": 54.03
+   },
+   {
+    "vb_l": 2.9,
+    "fb_hz": 53.8,
+    "pr_peak_hz": 52.11,
+    "woofer_dip_hz": 53.91
+   },
+   {
+    "vb_l": 3.94,
+    "fb_hz": 53.74,
+    "pr_peak_hz": 52.11,
+    "woofer_dip_hz": 53.91
+   }
+  ],
+  "today_11g": [
+   {
+    "vb_l": 2.3,
+    "fb_hz": 50.58,
+    "pr_peak_hz": 48.7,
+    "woofer_dip_hz": 50.72
+   },
+   {
+    "vb_l": 2.5,
+    "fb_hz": 50.55,
+    "pr_peak_hz": 48.7,
+    "woofer_dip_hz": 50.72
+   },
+   {
+    "vb_l": 2.7,
+    "fb_hz": 50.53,
+    "pr_peak_hz": 48.7,
+    "woofer_dip_hz": 50.72
+   },
+   {
+    "vb_l": 2.9,
+    "fb_hz": 50.5,
+    "pr_peak_hz": 48.7,
+    "woofer_dip_hz": 50.72
+   },
+   {
+    "vb_l": 3.94,
+    "fb_hz": 50.39,
+    "pr_peak_hz": 48.7,
+    "woofer_dip_hz": 50.6
+   }
+  ],
+  "note": "2026-09-29 measured with 11 g: PR peak 49.07 Hz, woofer dip 50.54 Hz (model 48.6 / 50.8)",
+  "expect_pr_peak_hz_within": [
+   50.5,
+   54.0
+  ]
+ },
+ "crossover": {
+  "file": "predictions/crossover_3ms_1m_midpoint.csv",
+  "recommended": {
+   "onaxis_rms_1_10k_db": 0.699441518378673,
+   "lw_rms_db": 0.7510557636270618,
+   "acoustic_xo_hz": 2169.257132138642,
+   "tweeter_xmax_sine_db_1m": 101.1569254775508
+  },
+  "today": {
+   "onaxis_rms_1_10k_db": 1.4179748150762936,
+   "lw_rms_db": 1.2409479298223942,
+   "acoustic_xo_hz": 2561.136961624377
+  },
+  "inroom_shift_vs_today_db": {
+   "1000": 0.5755887984973198,
+   "1500": 0.9691881078052507,
+   "2000": 2.0137644346201338,
+   "2500": 0.4218960723598061,
+   "3000": -0.4666099234441089,
+   "4000": -0.7234227796702706,
+   "6000": -1.0285498249754903,
+   "10000": -0.7576852230226938
+  }
+ },
+ "bass_target": {
+  "file": "Pria5_bass_target_house_curve.txt",
+  "target": "-0.5 dB/oct line, +4 dB low shelf at 100 Hz, 8th-order roll-off -3 dB at 55 Hz, 85 Hz fill <= +8 dB",
+  "with_8g": {
+   "headroom_vs_today_db": [
+    2.4,
+    3.2
+   ],
+   "punch_50_100_db": -0.3,
+   "warmth_120_250_db": 0.6,
+   "deep_40_50_db": -9.5
+  }
+ },
+ "seal_sensitivity": "a perfectly sealed box changes the bass headroom results by <= 0.1 dB (seal_sensitivity.json)"
+}

@@ -1,0 +1,83 @@
+[
+ {
+  "hz": 55,
+  "house_curve_db": 1.7,
+  "speaker_droop_db": -3.2,
+  "room_db": -5.6,
+  "eq_needed_db": 9.9,
+  "proposed_eq_db": 7.5,
+  "left_vs_target_db": -2.4
+ },
+ {
+  "hz": 60,
+  "house_curve_db": 3.3,
+  "speaker_droop_db": -3.7,
+  "room_db": -2.9,
+  "eq_needed_db": 9.2,
+  "proposed_eq_db": 8.6,
+  "left_vs_target_db": -0.6
+ },
+ {
+  "hz": 70,
+  "house_curve_db": 4.0,
+  "speaker_droop_db": -3.2,
+  "room_db": -0.3,
+  "eq_needed_db": 6.8,
+  "proposed_eq_db": 5.5,
+  "left_vs_target_db": -1.3
+ },
+ {
+  "hz": 80,
+  "house_curve_db": 3.7,
+  "speaker_droop_db": -2.1,
+  "room_db": -5.3,
+  "eq_needed_db": 10.4,
+  "proposed_eq_db": 8.2,
+  "left_vs_target_db": -2.2
+ },
+ {
+  "hz": 85,
+  "house_curve_db": 3.5,
+  "speaker_droop_db": -1.5,
+  "room_db": -8.4,
+  "eq_needed_db": 12.7,
+  "proposed_eq_db": 8.2,
+  "left_vs_target_db": -4.5
+ },
+ {
+  "hz": 90,
+  "house_curve_db": 3.2,
+  "speaker_droop_db": -1.0,
+  "room_db": -8.8,
+  "eq_needed_db": 12.3,
+  "proposed_eq_db": 7.8,
+  "left_vs_target_db": -4.5
+ },
+ {
+  "hz": 100,
+  "house_curve_db": 2.8,
+  "speaker_droop_db": -0.2,
+  "room_db": -8.1,
+  "eq_needed_db": 10.3,
+  "proposed_eq_db": 6.6,
+  "left_vs_target_db": -3.6
+ },
+ {
+  "hz": 120,
+  "house_curve_db": 1.9,
+  "speaker_droop_db": 0.8,
+  "room_db": -3.6,
+  "eq_needed_db": 4.0,
+  "proposed_eq_db": 3.9,
+  "left_vs_target_db": -0.1
+ },
+ {
+  "hz": 150,
+  "house_curve_db": 1.1,
+  "speaker_droop_db": 1.1,
+  "room_db": -0.6,
+  "eq_needed_db": -0.1,
+  "proposed_eq_db": 0.5,
+  "left_vs_target_db": 0.6
+ }
+]

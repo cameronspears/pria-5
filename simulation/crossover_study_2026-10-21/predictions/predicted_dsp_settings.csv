@@ -1,0 +1,23 @@
+bank,purpose,type,hz,q,gain_db
+Woofer EQ (or crossover block LR48),crossover,Low-pass,2500.0,0.5412,0.0
+Woofer EQ (or crossover block LR48),crossover,Low-pass,2500.0,1.3066,0.0
+Woofer EQ (or crossover block LR48),crossover,Low-pass,2500.0,0.5412,0.0
+Woofer EQ (or crossover block LR48),crossover,Low-pass,2500.0,1.3066,0.0
+Tweeter EQ (or crossover block),crossover,High-pass,2501.0,0.5219,0.0
+Tweeter EQ (or crossover block),crossover,High-pass,2231.0,0.8055,0.0
+Woofer EQ,bass (room + voicing),High-pass,52.6,0.9,0.0
+Woofer EQ,bass (room + voicing),High-pass,52.6,0.9,0.0
+Woofer EQ,bass (room + voicing),Peaking,64.0,0.86,10.0
+Woofer EQ,bass (room + voicing),Peaking,70.4,6.0,-5.2
+Woofer EQ,bass (room + voicing),Peaking,139.0,6.0,-5.2
+Woofer EQ,bass (room + voicing),Peaking,223.9,6.0,-6.1
+Woofer EQ,mid/treble (identical in both banks),Peaking,335.0,2.85,-2.0
+Tweeter EQ,mid/treble (identical in both banks),Peaking,335.0,2.85,-2.0
+Woofer EQ,mid/treble (identical in both banks),Peaking,682.0,3.69,-3.9
+Tweeter EQ,mid/treble (identical in both banks),Peaking,682.0,3.69,-3.9
+Woofer EQ,mid/treble (identical in both banks),Peaking,1221.0,5.79,-5.1
+Tweeter EQ,mid/treble (identical in both banks),Peaking,1221.0,5.79,-5.1
+Woofer EQ,mid/treble (identical in both banks),Peaking,1773.0,3.03,-3.2
+Tweeter EQ,mid/treble (identical in both banks),Peaking,1773.0,3.03,-3.2
+Woofer EQ,mid/treble (identical in both banks),Peaking,4661.0,0.49,-5.2
+Tweeter EQ,mid/treble (identical in both banks),Peaking,4661.0,0.49,-5.2

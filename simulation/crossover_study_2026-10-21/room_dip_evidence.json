@@ -1,0 +1,54 @@
+{
+ "1 m on-axis, 2026-09-29 #1": {
+  "dip_hz": 85.3,
+  "depth_db": -24.6
+ },
+ "1 m on-axis, 2026-09-29 #2": {
+  "dip_hz": 85.3,
+  "depth_db": -25.1
+ },
+ "+15 deg (26 cm above)": {
+  "dip_hz": 82.9,
+  "depth_db": -17.8
+ },
+ "-15 deg (26 cm below)": {
+  "dip_hz": 84.1,
+  "depth_db": -12.9
+ },
+ "30 deg left": {
+  "dip_hz": 86.6,
+  "depth_db": -23.7
+ },
+ "30 deg right": {
+  "dip_hz": 86.6,
+  "depth_db": -24.5
+ },
+ "1 m on-axis, 2026-09-30 combined": {
+  "dip_hz": 86.6,
+  "depth_db": -20.2
+ },
+ "1 m on-axis, 2026-09-30 woofer only": {
+  "dip_hz": 85.3,
+  "depth_db": -21.7
+ },
+ "26 cm above, 2026-09-30": {
+  "dip_hz": 85.3,
+  "depth_db": -18.9
+ },
+ "26 cm below, 2026-09-30": {
+  "dip_hz": 87.8,
+  "depth_db": -17.5
+ },
+ "woofer nearfield 5 mm": {
+  "dip_hz": 70.7,
+  "depth_db": 0.3
+ },
+ "PR nearfield 5 mm": {
+  "dip_hz": 87.8,
+  "depth_db": -2.3
+ },
+ "12-position room average (Tuning12)": {
+  "dip_hz": 85.3,
+  "depth_db": -11.4
+ }
+}

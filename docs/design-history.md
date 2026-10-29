@@ -58,7 +58,10 @@ row has none.
 | R4.32 | Oct 20 | An air leak at the tweeter: retainer 0.50 mm shallower, with shims. |
 | R4.33 to R4.35 | Oct 20 | A four-hole wire plate couldn't be sealed. One hole, then sized for the actual four 2.2 mm wires in heat shrink, with a hot-glue cup. |
 
-## Measuring and tuning (Sep 29 to Oct 2)
+## First tuning (Sep 29 to Oct 2)
+
+The October retune below superseded this tuning. It's kept as history.
+
 
 Equipment: a calibrated UMIK-1, REW, Bluetooth playback, and SigmaStudio through Dayton's KPX
 programmer.
@@ -74,3 +77,17 @@ programmer.
 | Tuning13 to 19 | Gain staging, a linked peak limiter, a rejected full-drive bass setting that made an excursion-like sound, a 150 Hz split with a bass-only limiter, a low-volume bass lift. |
 | Tuning20 to 26 | A gentler target slope (Tuning22, the last project file I audited), detector and level trials, a high-pass at 80 Hz tried and reverted. |
 | Listening preset | Both mixers −4 dB, bass detector −3 dB, Single 1 −6 dB, high-pass back at 50 Hz. Set by ear after Tuning22. |
+
+## October retune (Oct 21 to 22)
+
+The September tuning was fitted to my room. I plan to build more of these for other rooms, so I
+redid it as a speaker preset that's the same in every unit, with the room left to placement.
+The study, measurements and status ledger are in `simulation/crossover_study_2026-10-21/`,
+`measurements/tuning30_2026-10-22/` and `docs/tuning-status.md`.
+
+| Step | Date | What changed and why |
+|---|---|---|
+| Study | Oct 21 | A room-free model of the speaker: a fitted bass model, the cabinet's baffle step by BEM, and the measured drivers. It recommended a lower, asymmetric crossover (woofer LR48 at 2.5 kHz, tweeter 4th-order Bessel), the tweeter inverted, 8 g on each radiator, and a speaker preset. It traced the 80 to 85 Hz dip to the room. Predictions only |
+| Radiator mass | Oct 22 | Changed to 8 g each. It turned out they had carried 9 g and 8 g all along, not the 11 g recorded on Sep 29. Measured tuning 49.1 Hz, against 49.6 Hz re-predicted for the real starting mass |
+| Tuning30 | Oct 22 | The new crossover built from EQ rows, the tweeter inverted (normal polarity measured a 17 dB hole at 2.3 kHz), the speaker preset, a +5 dB bass tilt at 100 Hz, a bass limiter at −12 dBFS set from measured 10% THD points, a −1 dBFS clip guard per driver, mixers at −6.5 dB, and the volume pots removed. Measured on axis, off axis, close-mic and in a 12-seat room average |
+| Tuning31 | Oct 22 | One Tuning30 row (1220 Hz, Q 5, −4 dB) cut a hole the close-mic sweep showed wasn't needed, and rows far from the crossover were in both banks though they act through one driver. Three rows replace four: 19 filters become 14. Modelled from the Tuning30 sweeps, not measured. In use |

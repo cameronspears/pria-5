@@ -1,0 +1,20 @@
+bank,row,type,frequency_hz,q,gain_db,purpose
+woofer,1,high-pass,50,1.0,,excursion protection
+woofer,2,high-pass,50,1.0,,excursion protection
+woofer,3,peaking,64.4,1.2,4.2,bass alignment
+woofer,4,peaking,372,0.44,2.7,baffle step (both banks)
+woofer,5,peaking,1220,5.0,-4.0,woofer and cabinet peak (both banks)
+woofer,6,peaking,1577,1.83,-2.4,edge diffraction and woofer rise (both banks)
+woofer,7,peaking,3444,6.0,-2.7,tweeter peak (both banks)
+woofer,8,low shelf,100,0.71,5.0,bass tilt
+woofer,9,low-pass,2500,0.5412,-4.0,LR48 crossover and woofer trim
+woofer,10,low-pass,2500,1.3066,,LR48 crossover
+woofer,11,low-pass,2500,0.5412,,LR48 crossover
+woofer,12,low-pass,2500,1.3066,,LR48 crossover
+tweeter,1,peaking,372,0.44,2.7,shared with woofer row 4
+tweeter,2,peaking,1220,5.0,-4.0,shared with woofer row 5
+tweeter,3,peaking,1577,1.83,-2.4,shared with woofer row 6
+tweeter,4,peaking,3444,6.0,-2.7,shared with woofer row 7
+tweeter,5,high-pass,2501,0.5219,-10.5,Bessel-24 crossover and tweeter trim
+tweeter,6,high-pass,2231,0.8055,,Bessel-24 crossover
+tweeter,7,IIR b0=-1,,,,polarity inversion

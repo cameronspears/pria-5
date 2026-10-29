@@ -12,12 +12,12 @@ failed, a part didn't fit, a measurement said so, or I changed my mind about how
 This repository has the printable files, the measurements and DSP settings it was tuned with,
 and the reasons behind the main changes.
 
-> **Status.** The cabinet body is printed and working. The tuning measurements below were
-> made on the first complete prototype (2026-09-29 to 2026-10-02). The waveguide shape and
-> driver layout haven't changed since. The newest parts (R4.31 to R4.35: the baffle, the
-> magnetic frame, the tweeter retainer and the wire plate) are checked in CAD and the slicer
-> and haven't been printed yet. Nothing here has been
-> measured in an anechoic space or across a full polar set.
+> **Status.** The speaker runs **Tuning31**. Tuning30 was measured on 2026-10-22, on one unit in
+> one room with a UMIK-1. Tuning31 refines Tuning30's EQ; it's modelled from those sweeps and
+> **hasn't been measured**. Maximum SPL, far-field distortion and power handling aren't
+> measured either. Nothing here was measured in an anechoic space or across a full polar set.
+> [`docs/tuning-status.md`](docs/tuning-status.md) separates what's measured from what's
+> predicted.
 
 ## At a glance
 
@@ -25,11 +25,11 @@ and the reasons behind the main changes.
 |---|---|
 | Woofer | Dayton Audio ND91-4, 3.5 in aluminium cone |
 | Tweeter | Tymphany (Peerless) OT19NC00-04, 19 mm ring radiator, with a 33 µF / 100 V bipolar capacitor in series for protection |
-| Bass loading | 2 × Dayton Audio DS115-PR passive radiators, mounted on opposite sides, 11 g added to each |
+| Bass loading | 2 × Dayton Audio DS115-PR passive radiators, mounted on opposite sides, 8 g added to each |
 | Amplifier and DSP | Dayton Audio KABD-250 (ADAU1701), programmed in SigmaStudio, 24 V / 5 A supply |
-| Crossover | 3 kHz Linkwitz-Riley 24 dB/oct, tweeter delayed 3 samples (62.5 µs at 48 kHz) |
+| Crossover | Woofer 8th-order Linkwitz-Riley low-pass at 2.5 kHz, tweeter 4th-order Bessel high-pass, tweeter inverted and delayed 3 samples (62.5 µs at 48 kHz). Acoustic crossover about 2.2 kHz |
 | Waveguide | Printed elliptical waveguide, 98 × 50 × 16 mm |
-| Tuning | About 50 Hz, from nearfield measurements |
+| Bass | Radiators tuned to 49.1 Hz; room-free −3 dB at 48 Hz (measured, Tuning30) |
 | Cabinet | 142 × 230 mm face, about 167 mm deep, PLA, five print plates |
 | Input | Bluetooth (stereo summed to mono) |
 
@@ -55,55 +55,69 @@ range where they add up cleanly. That matters because the speaker sits above ear
 
 **Passive radiators.** Two radiators on opposite sides instead of one on the back. Mounted
 opposite each other, they push on the cabinet in opposite directions so the forces cancel,
-and the pair gave a better low-frequency alignment in the model. Each carries 11 g of added
-mass, and the nearfield measurements below show both peaking at the same frequency.
+and the pair gave a better low-frequency alignment in the model. Each carries 8 g of added
+mass on a rear-mounted screw, and they measure within 0.3 dB of each other.
 
 ![Cutaway through the centre of the speaker](docs/images/renders/cutaway.png)
 
-**DSP.** The KABD-250 runs the crossover, EQ and protection:
+**DSP.** The KABD-250 runs the crossover, EQ and protection. The tuning corrects the speaker
+and leaves the room alone, so the same settings suit every unit. Tuning31 has 14 filters:
 
-- 3 kHz LR24 crossover, low branch −4 dB, high branch −10 dB, tweeter delayed 3 samples
-- two cascaded 50 Hz high-pass filters (Q 0.71) to protect the woofer
-- twelve peaking filters applied the same way to both branches, fitted to a room-averaged
-  measurement, plus a 70 Hz boost on the woofer and a 3.5 kHz cut on the tweeter
-- a 150 Hz split with a bass-only limiter, a linked peak limiter, and a gentle bass lift at low
-  volume
+- the crossover, built from EQ rows: four low-pass rows at 2.5 kHz on the woofer, a 4th-order
+  Bessel high-pass on the tweeter, and the tweeter inverted and delayed 3 samples
+- two 50 Hz high-pass rows (Q 1.0) to protect the woofer, and +4.2 dB at 64.4 Hz for the bass
+  alignment
+- three corrective rows: 510 Hz +3.3 dB and 1440 Hz −2.1 dB on the woofer, 3300 Hz −2.4 dB on
+  the tweeter
+- a +5 dB bass tilt shelf at 100 Hz, set for placement and taste
+- a bass-only limiter at −12 dBFS (from measured 10% THD points), a clip guard at −1 dBFS on
+  each driver, and mixers at −6.5 dB so full source volume is the clean maximum
 
-The settings I listen with are written up in [`dsp/`](dsp/), including which values are from
-an audited project file and which are later changes I made by ear.
+Every row is in [`dsp/`](dsp/), for both Tuning31 and the measured Tuning30.
 
 ## Measurements
 
-All measurements were taken with a calibrated UMIK-1 and REW, playing over Bluetooth, in a normal
-room. They are useful for tuning this speaker in its room. They aren't anechoic data.
+Measured on 2026-10-22 with Tuning30, using a calibrated UMIK-1 and REW over Bluetooth, on one
+unit in one room. The 1 m curves are gated to 3 to 5 ms to cut room reflections; the bass is
+close-miked. They aren't anechoic data. The full write-up, with methods and limits, is
+[`measurements/tuning30_2026-10-22/PERFORMANCE_REPORT.md`](measurements/tuning30_2026-10-22/PERFORMANCE_REPORT.md).
 
-**Bass.** Each driver close-miked on its own. The woofer's dip at about 50.5 Hz and both
-radiators' peaks at about 49 Hz show the radiators taking over from the woofer around the
-tuning frequency. The two radiator curves lying on top of each other was my check that the two
-sides behave the same.
+**Response without the room.** −3 dB at 48 Hz, and within −2.4/+1.7 dB of the average from 1 to
+12 kHz on axis. The bass sits 8 to 10 dB above the midrange from 65 to 100 Hz on purpose: that's
+the +5 dB tilt and the +4.2 dB alignment boost. The worst remaining dip, −2.3 dB near 1.2 kHz,
+came from a Tuning30 EQ row that cut too much.
 
-![Woofer and passive-radiator nearfields](docs/images/bass-nearfields.png)
+![Room-free response, measured with Tuning30](measurements/tuning30_2026-10-22/derived/t30_roomfree_response.png)
 
-**Tweeter delay.** I tried 2, 3 and 4 samples of tweeter delay and kept 3, which made the dip
-near 2.4 kHz above the axis shallower. The dip isn't gone.
+**Tweeter polarity.** With the tweeter in normal polarity the drivers cancel into a 17 dB hole at
+2.3 kHz. Inverted, 1.5 to 4 kHz stays within −1.4/+1.6 dB. Both sweeps came from one mic position
+with nothing moved, so the difference is the polarity alone.
 
-![Tweeter delay comparison](docs/images/tweeter-delay.png)
+![Tweeter normal and inverted, measured](measurements/tuning30_2026-10-22/derived/t30_polarity.png)
 
-**Off-axis.** At 30° left and right the response follows the on-axis curve closely through the
-crossover and falls away gradually above 5 kHz, which is what the waveguide is for.
+**Off-axis.** Turned 30° left or right, or 15° above or below tweeter height, the response stays
+within −2.5/+1.6 dB of on-axis to 12 kHz. Vertically it did better than the model predicted.
 
-![Horizontal response at 0 and ±30 degrees](docs/images/horizontal-30deg.png)
+![Off-axis responses minus on-axis, measured](measurements/tuning30_2026-10-22/derived/t30_offaxis_deltas.png)
 
-**Room average.** Twelve microphone positions, averaged, against a target that slopes down
-gently. After the Tuning12 EQ, 1 to 16 kHz was within −0.82 / +0.89 dB of the target. The full
-60 Hz to 16 kHz range was −1.41 / +2.58 dB, so the ±1 dB goal over the whole band wasn't met;
-the biggest excess is in the bass, which I chose to keep.
+**Tuning31 (modelled, not measured).** Applying the refined EQ to the Tuning30 sweeps predicts
+the listening-window error falling from 0.90 to 0.49 dB RMS over 300 Hz to 12 kHz, with five
+fewer filters. I haven't run the sweeps that would confirm it.
 
-![Twelve-position room average after Tuning12](docs/images/room-average-tuning12.png)
+![Tuning31 listening window: modelled, not measured](measurements/tuning30_2026-10-22/derived/t31_predicted_listening_window.png)
 
-Tuning ran from Tuning01 to Tuning26 over four days, 2026-09-29 to 2026-10-02.
-[`measurements/`](measurements/) has the data behind these plots, and
-[`docs/design-history.md`](docs/design-history.md) lists what each round changed.
+*Tuning31: modelled, not measured.*
+
+**In the room.** A 12-seat average shows a 9 to 12 dB dip at 80 Hz. The room-free curve has no
+dip there, so it comes from where the speaker sits, not the speaker, and EQ can't fill it.
+Moving the speaker is the fix.
+
+**Bass limits.** The woofer runs out before the radiators. It reaches 10% THD at about −11 dBFS
+on the bass limiter at 56 to 63 Hz, so the limiter ceiling sits at −12 dBFS.
+
+[`docs/tuning-status.md`](docs/tuning-status.md) lists each prediction next to what was measured.
+The first prototype's September measurements (Tuning01 to Tuning26) are in
+[`measurements/`](measurements/) as history.
 
 ## How it got here
 
@@ -123,9 +137,12 @@ mattered most:
    tried cooling, reinforced cores, removable anchors, a home-made warp simulation and joint
    changes (C1 to C14). The real fixes were a loose nozzle clamp and switching to the stock
    Bambu presets.
-5. **Tuned by measurement, then by ear.** Crossover, delay and EQ came from measurements. Bass
-   limiting came after an excursion-like sound at full bass drive, and the final levels were
-   set by listening.
+5. **Correct the speaker, not the room.** The first tuning (September) was fitted to my room by
+   ear and by room averages. In October I rebuilt it as a speaker preset that's the same in
+   every unit: a model of the speaker without the room, a new crossover with the tweeter
+   inverted, bass limits set from measured distortion, and room effects left to placement.
+   Measuring it showed the radiators had carried 9 g and 8 g all along, not the 11 g I'd
+   recorded.
 6. **Trusting measured parts over drawings.** A printed test ring showed the radiator's frame
    is about 4.65 mm thick where the drawing suggested 2.6 mm, so a planned "flush radiator"
    revision was withdrawn. The tweeter retainer was resized several times from caliper readings

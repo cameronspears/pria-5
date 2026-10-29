@@ -1,0 +1,243 @@
+{
+ "note": "Predicted starting values from the 2026-10-21 study; bass rows to be re-derived after the next room average / placement test.",
+ "crossover": {
+  "rows": [
+   {
+    "bank": "Woofer EQ (or crossover block LR48)",
+    "purpose": "crossover",
+    "type": "Low-pass",
+    "hz": 2500.0,
+    "q": 0.5412,
+    "gain_db": 0.0
+   },
+   {
+    "bank": "Woofer EQ (or crossover block LR48)",
+    "purpose": "crossover",
+    "type": "Low-pass",
+    "hz": 2500.0,
+    "q": 1.3066,
+    "gain_db": 0.0
+   },
+   {
+    "bank": "Woofer EQ (or crossover block LR48)",
+    "purpose": "crossover",
+    "type": "Low-pass",
+    "hz": 2500.0,
+    "q": 0.5412,
+    "gain_db": 0.0
+   },
+   {
+    "bank": "Woofer EQ (or crossover block LR48)",
+    "purpose": "crossover",
+    "type": "Low-pass",
+    "hz": 2500.0,
+    "q": 1.3066,
+    "gain_db": 0.0
+   },
+   {
+    "bank": "Tweeter EQ (or crossover block)",
+    "purpose": "crossover",
+    "type": "High-pass",
+    "hz": 2501.0,
+    "q": 0.5219,
+    "gain_db": 0.0
+   },
+   {
+    "bank": "Tweeter EQ (or crossover block)",
+    "purpose": "crossover",
+    "type": "High-pass",
+    "hz": 2231.0,
+    "q": 0.8055,
+    "gain_db": 0.0
+   }
+  ],
+  "tweeter_polarity": "inverted relative to the September wiring (check V1 first)",
+  "tweeter_delay_samples": 3,
+  "woofer_trim_db": -4.0,
+  "tweeter_trim_db": -10.5
+ },
+ "eq_rows": [
+  {
+   "bank": "Woofer EQ",
+   "purpose": "bass (room + voicing)",
+   "type": "High-pass",
+   "hz": 52.6,
+   "q": 0.9,
+   "gain_db": 0.0
+  },
+  {
+   "bank": "Woofer EQ",
+   "purpose": "bass (room + voicing)",
+   "type": "High-pass",
+   "hz": 52.6,
+   "q": 0.9,
+   "gain_db": 0.0
+  },
+  {
+   "bank": "Woofer EQ",
+   "purpose": "bass (room + voicing)",
+   "type": "Peaking",
+   "hz": 64.0,
+   "q": 0.86,
+   "gain_db": 10.0
+  },
+  {
+   "bank": "Woofer EQ",
+   "purpose": "bass (room + voicing)",
+   "type": "Peaking",
+   "hz": 70.4,
+   "q": 6.0,
+   "gain_db": -5.2
+  },
+  {
+   "bank": "Woofer EQ",
+   "purpose": "bass (room + voicing)",
+   "type": "Peaking",
+   "hz": 139.0,
+   "q": 6.0,
+   "gain_db": -5.2
+  },
+  {
+   "bank": "Woofer EQ",
+   "purpose": "bass (room + voicing)",
+   "type": "Peaking",
+   "hz": 223.9,
+   "q": 6.0,
+   "gain_db": -6.1
+  },
+  {
+   "bank": "Woofer EQ",
+   "purpose": "mid/treble (identical in both banks)",
+   "type": "Peaking",
+   "hz": 335.0,
+   "q": 2.85,
+   "gain_db": -2.0
+  },
+  {
+   "bank": "Tweeter EQ",
+   "purpose": "mid/treble (identical in both banks)",
+   "type": "Peaking",
+   "hz": 335.0,
+   "q": 2.85,
+   "gain_db": -2.0
+  },
+  {
+   "bank": "Woofer EQ",
+   "purpose": "mid/treble (identical in both banks)",
+   "type": "Peaking",
+   "hz": 682.0,
+   "q": 3.69,
+   "gain_db": -3.9
+  },
+  {
+   "bank": "Tweeter EQ",
+   "purpose": "mid/treble (identical in both banks)",
+   "type": "Peaking",
+   "hz": 682.0,
+   "q": 3.69,
+   "gain_db": -3.9
+  },
+  {
+   "bank": "Woofer EQ",
+   "purpose": "mid/treble (identical in both banks)",
+   "type": "Peaking",
+   "hz": 1221.0,
+   "q": 5.79,
+   "gain_db": -5.1
+  },
+  {
+   "bank": "Tweeter EQ",
+   "purpose": "mid/treble (identical in both banks)",
+   "type": "Peaking",
+   "hz": 1221.0,
+   "q": 5.79,
+   "gain_db": -5.1
+  },
+  {
+   "bank": "Woofer EQ",
+   "purpose": "mid/treble (identical in both banks)",
+   "type": "Peaking",
+   "hz": 1773.0,
+   "q": 3.03,
+   "gain_db": -3.2
+  },
+  {
+   "bank": "Tweeter EQ",
+   "purpose": "mid/treble (identical in both banks)",
+   "type": "Peaking",
+   "hz": 1773.0,
+   "q": 3.03,
+   "gain_db": -3.2
+  },
+  {
+   "bank": "Woofer EQ",
+   "purpose": "mid/treble (identical in both banks)",
+   "type": "Peaking",
+   "hz": 4661.0,
+   "q": 0.49,
+   "gain_db": -5.2
+  },
+  {
+   "bank": "Tweeter EQ",
+   "purpose": "mid/treble (identical in both banks)",
+   "type": "Peaking",
+   "hz": 4661.0,
+   "q": 0.49,
+   "gain_db": -5.2
+  }
+ ],
+ "pr_added_mass_g_each": 8.0,
+ "counts": {
+  "today": {
+   "woofer_eq_rows": 15,
+   "tweeter_eq_rows": 13,
+   "unique_corrective_filters": 14
+  },
+  "new": {
+   "woofer_eq_rows": 11,
+   "tweeter_eq_rows": 5,
+   "unique_corrective_filters": 9,
+   "plus_crossover_rows": {
+    "woofer": 4,
+    "tweeter": 2
+   }
+  }
+ },
+ "fit": {
+  "bass_rms_db_1_3oct": 1.1479835734400354,
+  "bass_headroom_vs_today_db": [
+   3.9075698683409303,
+   3.917660657206902
+  ],
+  "bass_first_limit": [
+   "woofer@83"
+  ],
+  "upper_rms_db_1_3oct": 0.3661056353196013,
+  "upper_range_db": [
+   -0.9619310539532506,
+   1.2863133300852212
+  ]
+ },
+ "predicted_response": {
+  "new_vs_target_180_16k": {
+   "min": -0.9619310539532506,
+   "max": 1.2863133300852212,
+   "rms": 0.39239221295495824
+  },
+  "levels_re_500": {
+   "45": -4.0,
+   "50": -1.7,
+   "55": -0.5,
+   "60": 2.4,
+   "70": 4.4,
+   "85": -1.1,
+   "100": -0.5,
+   "150": 1.9,
+   "1000": -0.9,
+   "2000": -0.3,
+   "5000": -1.8,
+   "10000": -1.8,
+   "16000": -2.8
+  }
+ }
+}

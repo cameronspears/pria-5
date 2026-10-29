@@ -1,0 +1,10 @@
+Frequency (Hz),Bass-limiter level at 10% THD (dBFS),Last clean reading below 10% THD before mic overload (dBFS),Data type,Bass ceiling (dBFS)
+40,-17.1,,measured,-12
+45,-9.8,,measured,-12
+50,-13.7,,measured,-12
+56,-11.3,,measured,-12
+63,-10.9,,measured,-12
+71,-8.8,-10.2,trend estimate,-12
+80,-6.6,-12.1,trend estimate,-12
+100,-5.4,-15.2,trend estimate,-12
+125,-5.1,-19.0,trend estimate,-12

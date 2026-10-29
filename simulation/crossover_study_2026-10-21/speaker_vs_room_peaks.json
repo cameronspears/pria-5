@@ -1,0 +1,78 @@
+{
+ "1.2 kHz": {
+  "axis 9-29": {
+   "peak_hz": 1198.0,
+   "height_db": 6.3
+  },
+  "above 9-29": {
+   "peak_hz": 1251.0,
+   "height_db": 6.6
+  },
+  "below 9-29": {
+   "peak_hz": 1181.0,
+   "height_db": 5.3
+  },
+  "30L": {
+   "peak_hz": 1306.0,
+   "height_db": 6.8
+  },
+  "30R": {
+   "peak_hz": 1297.0,
+   "height_db": 6.9
+  },
+  "woofer-only 9-30": {
+   "peak_hz": 1306.0,
+   "height_db": 4.2
+  },
+  "combined axis 9-30": {
+   "peak_hz": 1198.0,
+   "height_db": 5.5
+  },
+  "above 9-30": {
+   "peak_hz": 1251.0,
+   "height_db": 8.4
+  },
+  "below 9-30": {
+   "peak_hz": 1139.0,
+   "height_db": 5.7
+  }
+ },
+ "680 Hz": {
+  "axis 9-29": {
+   "peak_hz": 692.0,
+   "height_db": 3.4
+  },
+  "above 9-29": {
+   "peak_hz": 702.0,
+   "height_db": 6.8
+  },
+  "below 9-29": {
+   "peak_hz": 766.0,
+   "height_db": 3.5
+  },
+  "30L": {
+   "peak_hz": 635.0,
+   "height_db": 5.8
+  },
+  "30R": {
+   "peak_hz": 603.0,
+   "height_db": 3.2
+  },
+  "woofer-only 9-30": {
+   "peak_hz": 687.0,
+   "height_db": 5.6
+  },
+  "combined axis 9-30": {
+   "peak_hz": 692.0,
+   "height_db": 6.2
+  },
+  "above 9-30": {
+   "peak_hz": 723.0,
+   "height_db": 7.8
+  },
+  "below 9-30": {
+   "peak_hz": 771.0,
+   "height_db": 1.9
+  }
+ }
+}
